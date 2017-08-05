@@ -2,7 +2,7 @@
 
 [Conan.io](https://conan.io) package for [Boost.Thread](https://github.com/Boostorg/Thread) project
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/conan-public/Boost.Thread%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/Boost.Thread%3Abincrafters).
 
 ## For Users: Use this package
 
