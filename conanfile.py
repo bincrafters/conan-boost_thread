@@ -4,6 +4,10 @@ from conans import ConanFile
 class BoostThreadConan(ConanFile):
     name = "Boost.Thread"
     version = "1.66.0"
+
+    options = {"shared": [True, False], "threadapi": ['default', 'win32', 'pthread']}
+    default_options = "shared=False", "threadapi=default"
+
     requires = \
         "Boost.Level11Group/1.66.0@bincrafters/testing"
     lib_short_names = ["thread"]
