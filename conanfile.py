@@ -7,7 +7,7 @@ from conans import ConanFile, tools
 class BoostThreadConan(ConanFile):
     name = "boost_thread"
     version = "1.66.0"
-    url = "https://github.com/bincrafters/conan-boost-thread"
+    url = "https://github.com/bincrafters/conan-boost_thread"
 
     lib_short_names = ["thread"]
     is_in_cycle_group = True
