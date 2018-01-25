@@ -18,8 +18,8 @@ class BoostThreadConan(ConanFile):
     default_options = "shared=False", "threadapi=default"
 
     requires = (
-        "boost_package_tools/1.66.0@bincrafters/testing",
-        "boost_level11group/1.66.0@bincrafters/testing"
+        "boost_package_tools/1.66.0@bincrafters/stable",
+        "boost_level11group/1.66.0@bincrafters/stable"
     )
 
     # BEGIN
@@ -29,7 +29,7 @@ class BoostThreadConan(ConanFile):
     short_paths = True
     generators = "boost"
     settings = "os", "arch", "compiler", "build_type"
-    build_requires = "boost_generator/1.66.0@bincrafters/testing"
+    build_requires = "boost_generator/1.66.0@bincrafters/stable"
 
     def package_id(self):
         getattr(self, "package_id_additional", lambda:None)()
