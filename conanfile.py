@@ -11,7 +11,7 @@ class BoostThreadConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     exports = ["LICENSE.md"]
     lib_short_names = ["thread"]
-    is_in_cycle_group = True
+    level_group = "boost_level11group"
     is_header_only = False
     
     options = {"shared": [True, False], "threadapi": ['default', 'win32', 'pthread']}
