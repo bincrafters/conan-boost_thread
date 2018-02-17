@@ -16,6 +16,7 @@ class BoostThreadConan(ConanFile):
     
     options = {"shared": [True, False], "threadapi": ['default', 'win32', 'pthread']}
     default_options = "shared=False", "threadapi=default"
+    settings = "os"
 
     requires = (
         "boost_package_tools/1.66.0@bincrafters/testing",
@@ -27,6 +28,10 @@ class BoostThreadConan(ConanFile):
 
         for dep_name in boost_deps_only:
             self.info.requires[dep_name].full_version_mode()
+
+    def package_info_additional(self):
+        if self.settings.os == "Linux":
+            self.cpp_info.libs.append("rt")
 
     # BEGIN
 
