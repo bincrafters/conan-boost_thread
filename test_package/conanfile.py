@@ -9,6 +9,11 @@ class TestPackageConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
 
+    def requirements(self):
+        boost_deps = ['assert', 'atomic', 'bind', 'chrono', 'concept_check', 'config', 'container', 'container_hash', 'core', 'date_time', 'exception', 'function', 'intrusive', 'io', 'iterator', 'move', 'mpl', 'optional', 'predef', 'preprocessor', 'smart_ptr', 'static_assert', 'system', 'thread', 'throw_exception', 'tuple', 'type_traits', 'utility', 'winapi']
+        for lib in boost_deps:
+            self.requires("boost_" + lib + "/1.67.0@" + self.user + "/" + self.channel)
+
     def build(self):
         cmake = CMake(self)
         cmake.configure()
@@ -19,5 +24,4 @@ class TestPackageConan(ConanFile):
             if self.settings.os == "Windows":
                 self.run(os.path.join("bin", "test_package"))
             else:
-                self.run(
-                    "DYLD_LIBRARY_PATH=%s %s" % (os.environ['DYLD_LIBRARY_PATH'], os.path.join("bin", "test_package")))
+                self.run("DYLD_LIBRARY_PATH=%s %s" % (os.environ['DYLD_LIBRARY_PATH'], os.path.join("bin", "test_package")))
