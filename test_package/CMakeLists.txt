@@ -32,6 +32,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
   CONAN_PKG::boost_smart_ptr
   CONAN_PKG::boost_static_assert
   CONAN_PKG::boost_system
+  CONAN_PKG::boost_thread
   CONAN_PKG::boost_throw_exception
   CONAN_PKG::boost_tuple
   CONAN_PKG::boost_type_traits
